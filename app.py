@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)  # 允许跨域请求
 
 # 类别名称（根据训练集）
-class_names = ['Fresh', 'Less fresh', 'Spoiled']  # TODO: 替换为你的实际类别名
+class_names = ['Fresh', 'Less fresh', 'Spoiled']
 
 # 加载模型结构
 model = models.densenet121(pretrained=False)
@@ -82,20 +82,10 @@ def predict():
             'error': f'识别失败: {str(e)}'
         }), 500
 
-@app.route('/health', methods=['GET'])
-def health_check():
-    """健康检查接口"""
-    return jsonify({
-        'status': 'healthy',
-        'message': '虾新鲜度识别服务运行正常',
-        'model': 'DenseNet121',
-        'classes': class_names
-    })
-
 if __name__ == '__main__':
     print("启动虾新鲜度识别服务...")
     print("API地址: http://127.0.0.1:5000/predict")
     print("健康检查: http://127.0.0.1:5000/health")
     print("支持的类别:", class_names)
     print("按 Ctrl+C 停止服务")
-    app.run(host='127.0.0.1', port=5000, debug=True) 
+    app.run(host='0.0.0.0', port=5000, debug=True)
