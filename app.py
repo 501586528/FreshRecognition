@@ -16,7 +16,7 @@ class_names = ['Fresh', 'Less-fresh', 'Spoiled']
 model = models.densenet121(pretrained=False)
 num_ftrs = model.classifier.in_features
 model.classifier = torch.nn.Linear(num_ftrs, len(class_names))
-model.load_state_dict(torch.load('shrimp_3class_model_plus.pth', map_location='cpu'))
+model.load_state_dict(torch.load('shrimp_3class_model_20250528_133648.pth', map_location='cpu'))
 model.eval()
 
 # 预处理方法（和训练时 test 一致）
@@ -88,4 +88,4 @@ if __name__ == '__main__':
     print("健康检查: http://127.0.0.1:5000/health")
     print("支持的类别:", class_names)
     print("按 Ctrl+C 停止服务")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)
