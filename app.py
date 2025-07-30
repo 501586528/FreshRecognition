@@ -83,9 +83,4 @@ def predict():
         }), 500
 
 if __name__ == '__main__':
-    print("启动虾新鲜度识别服务...")
-    print("API地址: http://127.0.0.1:5000/predict")
-    print("健康检查: http://127.0.0.1:5000/health")
-    print("支持的类别:", class_names)
-    print("按 Ctrl+C 停止服务")
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
