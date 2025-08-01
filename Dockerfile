@@ -1,5 +1,5 @@
 # 使用官方 Python Slim 镜像，适用于 PyTorch
-FROM python:3.10-slim
+FROM --platform=linux/amd64 python:3.10-slim
 
 # 设置时区为上海（可选）
 RUN apt-get update && \
