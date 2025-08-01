@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 pytorch/pytorch:2.1.2-cpu
+FROM --platform=linux/amd64 python:3.10-slim
 
 # 安装系统依赖和设置时区
 RUN apt-get update && \
@@ -14,7 +14,7 @@ RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && 
 COPY . /app
 WORKDIR /app
 
-# 安装你自己的依赖（torch 不要再写到 requirements.txt 里）
+# 安装依赖
 RUN pip install -r requirements.txt
 
 EXPOSE 80
