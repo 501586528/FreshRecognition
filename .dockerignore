@@ -1,8 +1,9 @@
-.git
-.dockerignore
-.venv/
 __pycache__/
-Dockerfile*
-container.config.json
-LICENSE
-README.md
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+.idea/
+.DS_Store
+.git/
