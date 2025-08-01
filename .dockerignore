@@ -1,5 +1,7 @@
 .git
 .dockerignore
+.venv/
+__pycache__/
 Dockerfile*
 container.config.json
 LICENSE
