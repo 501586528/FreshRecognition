@@ -15,7 +15,7 @@ RUN pip install \
     flask \
     flask_cors \
     pillow \
-    numpy \
+    numpy==1.26.4 \
     torch==2.1.2+cpu \
     torchvision==0.16.2+cpu \
     -f https://download.pytorch.org/whl/torch_stable.html
