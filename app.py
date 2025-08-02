@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)  # 允许跨域请求
 
 # 类别名称（根据训练集）
-class_names = ['Fresh', 'Less-fresh', 'Spoiled']
+class_names = ['Fresh', 'Spoiled', 'Less-fresh']
 
 # 加载模型结构
 model = models.densenet121(pretrained=False)
